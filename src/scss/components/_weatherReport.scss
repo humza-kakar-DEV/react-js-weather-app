@@ -1,0 +1,58 @@
+@keyframes loading {
+    0%{
+        transform: rotate(0deg)
+    }
+    60%{
+        transform: rotate(360deg)
+    }
+}
+
+.loading-container {
+    @include flex-dynamic(row , nowrap , center , center , 10px , none);
+    >.loading-heading{
+        color: $weather-report-text-color;
+    }
+    .loading-icon {
+        @include size(40px , 40px);
+        animation-name: loading;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+}
+
+.report {
+    @include flex-dynamic(column , nowrap , center , center , none , none);
+
+    >#{&}-heading {
+        color: $weather-report-text-color;
+        margin: 5px;
+        font-family: 'Open Sans',
+        sans-serif;
+        letter-spacing: 2px;
+    }
+
+    #{&}-weather-type {
+        color: $weather-report-text-color;
+        margin: 5px;
+        padding-bottom: 30px;
+        font-family: 'Open Sans',
+        sans-serif;
+        letter-spacing: 2px;
+    }
+
+
+
+    #{&}-weather-image {
+        @include size(110px , 110px);
+        padding: 15px;
+    }
+
+    #{&}-temperature {
+        margin: 0px;
+        color: $weather-report-text-color;
+        font-family: 'Comfortaa',
+        cursive;
+    }
+}
+

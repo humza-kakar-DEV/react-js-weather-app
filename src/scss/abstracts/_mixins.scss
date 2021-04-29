@@ -1,0 +1,14 @@
+@mixin flex-dynamic($direction , $wrap , $justify , $align , $column-gap , $row-gap) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+    align-items: $align;
+    column-gap: $column-gap;
+    row-gap: $row-gap;
+}
+
+@mixin size($width , $height) {
+    width: $width;
+    height: $height;
+}

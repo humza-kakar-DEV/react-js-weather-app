@@ -1,0 +1,89 @@
+@keyframes animateText {
+    0% {
+        width: 0;
+    }
+
+    70% {
+        width: 100%;
+    }
+
+    80% {
+        width: 100%;
+    }
+}
+
+.credits-information {
+    position: absolute;
+    color: $credit-section-hidden-text-color;
+    letter-spacing: 10px;
+    left: 400px;
+    top: 300px;
+
+    &::after {
+        content: attr(data-placeholder);
+        position: absolute;
+        color: $credit-section-show-text-color;
+        left: 0px;
+        right: 0px;
+        width: 0px;
+        height: 100%;
+        overflow: hidden;
+        letter-spacing: 10px;
+        border-right: solid;
+        border-right-color: red;
+        border-right-width: 5px;
+        animation-name: animateText;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+}
+
+a[href='https://rapidapi.com/weatherapi/api/weatherapi-com?endpoint=apiendpoint_02481648-7c41-48cc-9b9f-e53596d38bab'] {
+    color: red;
+    padding-right: 5px;
+    text-decoration: none;
+}
+
+.footer {
+    display: flex;
+    @include size(20% , 100px);
+    padding: 30px;
+    position: absolute;
+    bottom: 130px;
+    right: 60%;
+    left: 40%;
+
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: $credit-section-footer-border-color;
+
+    >#{&}-icons-container {
+        @include flex-dynamic(column, none, center, center, none, none);
+        margin: 10px;
+    }
+
+    #{&}-links-container {
+        @include flex-dynamic(column , none , center , left , 10px , none);
+        margin: 10px;
+
+        a {
+            color: $credit-section-text-color;
+            text-decoration: none;
+            padding: 10px;
+
+            &:hover::after {
+                content: '';
+                display: block;
+                background-color: $credit-section-links-hover-line-color;
+                @include size(100% , 2px);
+            }
+        }
+    }
+
+    img {
+        @include size(25px , 25px);
+        padding: 10px;
+    }
+}

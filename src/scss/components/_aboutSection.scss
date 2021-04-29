@@ -1,0 +1,73 @@
+.container-flex {
+    @include size(100% , 80%);
+    @include flex-dynamic(row , nowrap , center , center , none , none);
+    box-sizing: border-box;
+    >.content-container {
+        @include flex-dynamic(row , none , center , center , none , none);
+        @include size(100% , 20%);
+        box-sizing: border-box;
+    
+        >.about-me-paragraph {
+            font-family: 'Open Sans',
+            sans-serif;
+            color: $about-section-text-color;
+            @include size(40% , 100px);
+            text-align: center;
+            margin-bottom: 270px;
+            margin-left: 50px;
+
+            >.expertise-panel{
+                text-align: left;
+            }
+        }
+
+        .about-image {
+            @include size(300px , 400px);
+            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        }
+    }
+}
+
+
+
+
+// .footer {
+//     display: flex;
+//     @include size(20% , 100px);
+//     padding: 30px;
+//     margin-left: -200px;
+
+//     border-radius: 5px;
+//     border-style: solid;
+//     border-width: 2px;
+//     border-color: $about-content-footer-border-color;
+
+//     >#{&}-icons-container {
+//         @include flex-dynamic(column, none, center, center, none, none);
+//         margin: 10px;
+//     }
+
+//     #{&}-links-container {
+//         @include flex-dynamic(column , none , center , left , 10px , none);
+//         margin: 10px;
+
+//         a {
+//             color: $about-content-text-color;
+//             text-decoration: none;
+//             padding: 10px;
+
+//             &:hover::after {
+//                 content: '';
+//                 display: block;
+//                 background-color: $about-content-links-hover-line-color;
+//                 @include size(100% , 2px);
+//             }
+//         }
+//     }
+
+//     img {
+//         @include size(25px , 25px);
+//         padding: 10px;
+//     }
+// }
+

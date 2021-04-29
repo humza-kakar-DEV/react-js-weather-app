@@ -1,0 +1,19 @@
+.refresh-container {
+    display: inline-block;
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    cursor: pointer;
+
+    >.refresh-icon {
+        @include size(70px , 70px);
+
+        &:hover {
+            transform: scale(0.94);
+            transform: rotate(180deg);
+            transition-property: transform;
+            transition-duration: 300ms;
+            transition-timing-function: ease-in-out;
+        }
+    }
+}

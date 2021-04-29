@@ -1,0 +1,4 @@
+.content {
+    @include size(100% , 80%);
+    @include flex-dynamic(row , wrap , center , center , none , none);
+}

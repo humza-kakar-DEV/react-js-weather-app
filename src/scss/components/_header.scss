@@ -1,0 +1,47 @@
+.app-content {
+    @include flex-dynamic(row , nowrap , none , center , none , none);
+
+    >#{&}-logo {
+        @include size(50px , 50px);
+        padding-right: 5px;
+    }
+
+    >#{&}-heading {
+        color: $header-text-color;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.flex-header {
+    @include flex-dynamic(row , none , space-around , none , none , none);
+    background-color: $header-background-color;
+}
+
+.nav {
+    @include flex-dynamic(row , none , none , center , none , none);
+    >#{&}-links > li {
+        display: inline-block;
+        margin-right: 20px;
+
+        @for $link-counter from 1 through 3{
+            .links-#{$link-counter} {
+                list-style-type: none;
+                text-decoration: none;
+                color: $header-text-color;
+                font-family: 'Open Sans',
+                sans-serif;
+                letter-spacing: 2px;
+
+                &:hover::after {
+                    content: '';
+                    display: block;
+                    @include size(100%, 2px);
+                    background-color: $header-links-hover-line-color;
+                }
+            }
+        }
+    }
+}

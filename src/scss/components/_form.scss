@@ -1,0 +1,98 @@
+.form-control {
+    position: relative;
+    margin-top: 10px;
+
+    @for $container-count from 1 through 2 {
+        #{&}-container-#{$container-count} {
+            margin: 40px;
+            position: relative;
+        }
+    }
+
+    @for $label-count from 1 through 2 {
+        #{&}-label-#{$label-count} {
+            margin-right: 30px;
+            color: $form-contol-text-color;
+            position: relative;
+            z-index: 1;
+        }
+
+        #{&}-container-#{$label-count} {
+            position: relative;
+        }
+
+        #{&}-label-#{$label-count}::before {
+            content: '';
+            z-index: -1;
+            position: absolute;
+            border-style: solid;
+            border-width: 2px;
+            border-color: $form-control-label-outline-color;
+            @include size(40px , 40px);
+            left: -17px;
+            top: -9px;
+            border-radius: 20px;
+        }
+    }
+
+    input {
+        border-radius: 15px;
+        outline: none;
+        height: 24.5px;
+        padding-left: 12px;
+    }
+
+    .submit-button {
+        background-color: $form-control-submit-button-color;
+        border-radius: 15px;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #33CF97;
+        outline: none;
+        color: $form-contol-text-color;
+        position: relative;
+        z-index: 1;
+        left: 85px;
+        @include size(150px , 30px);
+        font-family: 'Open Sans',
+        sans-serif;
+        letter-spacing: 2px;
+        transform: scale(1);
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(0.97);
+            transition-property: transform;
+            transition-duration: 200ms;
+            transition-timing-function: ease-in-out;
+        }
+    }
+
+    .form-heading {
+        color: $form-contol-text-color;
+        position: absolute;
+        left: 109px;
+        top: -50px;
+        font-family: 'Open Sans',
+        sans-serif;
+        letter-spacing: 5px;
+    }
+
+    &::before {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        background-color: $from-control-background-color;
+        @include size(550px, 350px);
+        top: -110px;
+        right: -130px;
+        border-radius: 10px;
+        border-style: solid;
+        border-width: 2px;
+        border-color: white;
+        box-shadow: 20px 20px 10px $from-control-background-shadow;
+    }
+}
+
+
+
